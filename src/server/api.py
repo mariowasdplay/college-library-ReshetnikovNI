@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from common.models import Book, IssueRecord
-from server.storage import Storage
+from storage import Storage
 from datetime import datetime
 
 app = Flask(__name__)

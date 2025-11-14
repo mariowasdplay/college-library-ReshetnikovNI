@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from .services import books_search, books_add, issue, return_, ApiError
+from services import books_search, books_add, issue, return_, ApiError
 
 class MainUI(tk.Frame):
     def __init__(self, master):
@@ -75,14 +75,3 @@ class MainUI(tk.Frame):
             self.on_search()
         except ApiError as e:
             messagebox.showerror("API", str(e))
-src/client_gui/app.py
-
-import tkinter as tk
-from .ui_screens import MainUI
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    root.title("Колледж-Библиотека")
-    root.geometry("720x520")
-    MainUI(root)
-    root.mainloop()
