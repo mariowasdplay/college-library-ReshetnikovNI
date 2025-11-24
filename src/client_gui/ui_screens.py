@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from services import books_search, books_add, issue, return_, ApiError
+from .services import books_search, books_add, issue, return_, ApiError
 
 class MainUI(tk.Frame):
     def __init__(self, master):
@@ -74,8 +74,4 @@ class MainUI(tk.Frame):
             messagebox.showinfo("OK","Принято")
             self.on_search()
         except ApiError as e:
-<<<<<<< HEAD
             messagebox.showerror("API", str(e))
-=======
-            messagebox.showerror("API", str(e))
->>>>>>> 3bf9f132078a5fea7b37245ea7a8dde86dfb0f22
