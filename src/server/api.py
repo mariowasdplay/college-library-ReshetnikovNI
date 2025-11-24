@@ -101,3 +101,11 @@ def _e500(e):
 
 if __name__ == "__main__":
     app.run(port=5001, debug=True)
+
+import logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+log = logging.getLogger("api")
+log.info("ISSUE user=%s isbn=%s", data["user_id"], data["isbn"])
+class TraceMixin:
+    def trace(self, tag, **kw):
+        logging.info("TRACE %s %s", tag, kw)
