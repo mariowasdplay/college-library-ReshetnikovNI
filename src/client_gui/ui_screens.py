@@ -75,14 +75,3 @@ class MainUI(tk.Frame):
             self.on_search()
         except ApiError as e:
             messagebox.showerror("API", str(e))
-src/client_gui/app.py
-
-import tkinter as tk
-from .ui_screens import MainUI
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    root.title("Колледж-Библиотека")
-    root.geometry("720x520")
-    MainUI(root)
-    root.mainloop()
