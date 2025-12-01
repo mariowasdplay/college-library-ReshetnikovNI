@@ -28,3 +28,9 @@ def issue(user_id: str, isbn: str):
 
 def return_(user_id: str, isbn: str):
     return _req("POST", "/return", json={"user_id": user_id, "isbn": isbn})
+
+def check_overdues():
+    """Проверяет просроченные книги на сервере (GET /overdues).
+    Возвращает список просроченных записей.
+    """
+    return _req("GET", "/overdues").get("overdues", [])
